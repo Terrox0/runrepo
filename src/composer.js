@@ -7,22 +7,22 @@ export function composeReadme(projectDir = process.cwd(), options = {}) {
   const readmePath = path.join(projectDir, 'README.md');
   const port = detected.defaultPort || 3000;
 
-  const badge = `[![runrepo: 1-command](https://img.shields.io/badge/runrepo-1--command%20run-brightgreen?style=flat-square&logo=github)](https://github.com/Terrox0/runrepo)`;
+  const badge = `[![runrepo: 1-command](https://img.shields.io/badge/runrepo-1--command%20run-2ea44f?logo=github)](https://github.com/Terrox0/runrepo)`;
 
   const quickstartBlock = `<!-- runrepo:start -->
-## 🚀 Quickstart (1-Command Run)
+## Quickstart (1-Command Run)
 ${badge}
 
-This repository is powered by [runrepo](https://github.com/Terrox0/runrepo). You can launch it immediately on any machine with zero manual configuration:
+This repository is configured with [runrepo](https://github.com/Terrox0/runrepo). You can launch it with one command:
 
 \`\`\`bash
-# Option 1: Universal run script (Auto-checks .env & falls back to Docker if runtime is absent)
+# Native host execution (auto-copies .env if missing, falls back to Docker if runtime is absent)
 ./run.sh
 
-# Option 2: Force isolated Docker container
+# Or force containerized execution
 ./run.sh --container
 
-# Option 3: Zero-install CLI runner
+# Or zero-install CLI runner
 npx runrepo run
 \`\`\`
 
@@ -38,8 +38,8 @@ Configure the following in your \`.env\` file (initialized from \`.env.example\`
 | :--- | :--- | :--- |
 ${detected.extractedEnvVars.map(v => `| \`${v}\` | Configures ${v.toLowerCase().replace(/_/g, ' ')} | \`your_${v.toLowerCase()}_here\` |`).join('\n')}
 ` : ''}
-### Troubleshooting & Health Check
-Run the pre-flight doctor to diagnose any missing files or port collisions:
+### Troubleshooting
+Run the pre-flight doctor to diagnose any missing files, unmapped variables, or port collisions:
 \`\`\`bash
 npx runrepo doctor
 \`\`\`
@@ -60,15 +60,13 @@ npx runrepo doctor
 
 ${badge}
 
-> Auto-generated reproducible project layout built with [runrepo](https://github.com/Terrox0/runrepo).
-
 ${quickstartBlock}
 
-## 🛠️ Architecture & Development
-- **Devcontainer**: Open in VS Code with \`Remote - Containers: Reopen in Container\`
+## Development
+- **Devcontainer**: Open in VS Code using \`Remote - Containers: Reopen in Container\`
 - **Container Build**: \`docker build -t ${projectName} .\`
 
-## 📄 License
+## License
 MIT
 `;
   }
