@@ -1,0 +1,37 @@
+{
+  "name": "runrepo",
+  "version": "0.1.0",
+  "description": "Turn any messy codebase into a 1-command runnable project. Auto-detects runtime, generates devcontainers & run scripts, audits missing envs, and writes docs.",
+  "type": "module",
+  "bin": {
+    "runrepo": "./bin/runrepo.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "doctor": "node bin/runrepo.js doctor",
+    "init": "node bin/runrepo.js init"
+  },
+  "keywords": [
+    "developer-experience",
+    "devcontainer",
+    "dockerfile",
+    "run-script",
+    "readme-generator",
+    "reproducibility",
+    "onboarding",
+    "cli"
+  ],
+  "author": "Terrox0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Terrox0/runrepo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Terrox0/runrepo/issues"
+  },
+  "homepage": "https://github.com/Terrox0/runrepo#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
