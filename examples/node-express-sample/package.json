@@ -1,0 +1,13 @@
+{
+  "name": "sample-express-api",
+  "version": "1.0.0",
+  "description": "Sample API without initial Dockerfile or run scripts",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
